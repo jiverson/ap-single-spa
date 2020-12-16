@@ -9,7 +9,7 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "root-config",
     webpackConfigEnv,
     argv,
-    disableHtmlGeneration: true,
+    // disableHtmlGeneration: true,
   });
 
   const merge = webpackMerge({
@@ -20,6 +20,8 @@ module.exports = (webpackConfigEnv, argv) => {
     ),
   });
 
+  console.log(webpackConfigEnv);
+
   return merge(
     {
       plugins: [
@@ -27,7 +29,7 @@ module.exports = (webpackConfigEnv, argv) => {
           inject: false,
           template: "src/index.ejs",
           templateParameters: {
-            isLocal: webpackConfigEnv && webpackConfigEnv.isLocal === "true",
+            isLocal: webpackConfigEnv && webpackConfigEnv.isLocal === true,
             orgName,
           },
         }),
@@ -36,6 +38,10 @@ module.exports = (webpackConfigEnv, argv) => {
     defaultConfig,
     {
       // modify the webpack config however you'd like to by adding to this object
+      devServer: {
+        https: true,
+        port: 9000,
+      },
     }
   );
 };
