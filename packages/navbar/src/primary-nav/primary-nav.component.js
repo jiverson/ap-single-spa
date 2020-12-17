@@ -28,7 +28,7 @@ export default function PrimaryNav(props) {
       <ul>
         <li>
           <a
-            href="https://github.com/polyglot-microfrontends"
+            href="https://github.com/jiverson/ap-single-spa"
             className={styles.navLink}
           >
             Code / Documentation

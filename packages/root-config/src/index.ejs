@@ -51,6 +51,7 @@
       "imports": {
         "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
         "@ap-single-spa/root-config": "//localhost:9000/ap-single-spa-root-config.js",
+        "@ap-single-spa/styleguide": "//localhost:9002/ap-single-spa-styleguide.js",
         "@ap-single-spa/navbar": "//localhost:9001/ap-single-spa-navbar.js",
         "@ap-single-spa/account-settings": "//localhost:8080/ap-single-spa-account-settings.js"
       }
@@ -79,6 +80,7 @@
   <main></main>
   <script>
     System.import('@ap-single-spa/root-config');
+    System.import('@ap-single-spa/styleguide');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
