@@ -9,7 +9,7 @@ module.exports = (webpackConfigEnv, argv) => {
     projectName: "root-config",
     webpackConfigEnv,
     argv,
-    // disableHtmlGeneration: true,
+    disableHtmlGeneration: true,
   });
 
   const merge = webpackMerge({
@@ -19,8 +19,6 @@ module.exports = (webpackConfigEnv, argv) => {
       (plugin) => plugin.constructor && plugin.constructor.name
     ),
   });
-
-  console.log(webpackConfigEnv);
 
   return merge(
     {

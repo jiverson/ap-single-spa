@@ -1,0 +1,27 @@
+{
+  "name": "@ap-single-spa/account-settings",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "gulp",
+    "start": "concurrently yarn:watch yarn:serve",
+    "serve:old": "http-server --ssl --cors dist",
+    "serve": "http-server --cors dist",
+    "clean": "gulp clean",
+    "watch": "gulp watch",
+    "create-ssl-cert": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
+  },
+  "devDependencies": {
+    "@types/systemjs": "^6.1.0",
+    "angular": "^1.8.0",
+    "angular-ui-router": "^1.0.25",
+    "concurrently": "^5.1.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "http-server": "*"
+  },
+  "dependencies": {
+    "single-spa-angularjs": "^3.2.0"
+  }
+}
