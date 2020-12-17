@@ -6,16 +6,21 @@
     "serve": "wsrun --parallel serve",
     "start": "concurrently \"wsrun --parallel start\" \"wsrun --parallel serve\""
   },
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/angular",
+      "**/angular/**",
+      "**/angular-ui-router",
+      "**/angular-ui-router/**",
+      "**/single-spa-angularjs",
+      "**/single-spa-angularjs/**"
+    ]
+  },
   "devDependencies": {
     "concurrently": "^5.1.0",
     "wsrun": "^5.2.0"
-  },
-  "dependencies": {
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.0.1",
-    "style-loader": "^2.0.0"
   }
 }

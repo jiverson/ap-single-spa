@@ -4,8 +4,7 @@
   "scripts": {
     "build": "gulp",
     "start": "concurrently yarn:watch yarn:serve",
-    "serve:old": "http-server --ssl --cors dist",
-    "serve": "http-server --cors dist",
+    "serve": "http-server dist --ssl --cors",
     "clean": "gulp clean",
     "watch": "gulp watch",
     "create-ssl-cert": "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
